@@ -70,7 +70,7 @@ namespace OOP_Anh.doanhoangviet.Demo
             dao.Insert(new Product(3, "Televison", 1));
             dao.Insert(new Product(4, "fridge", 1));
             dao.Insert(new Product(5, "air conditioning", 2));
-            List<Product> products = dao.Search("",1);
+            List<Product> products = dao.Search(p=>p.CategoryId==1);
             Console.WriteLine(products.Count == 4 ? " SearchTest passed" : " SearchTest failed");
         }
 

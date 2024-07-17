@@ -67,7 +67,7 @@ namespace OOP_Anh.doanhoangviet.Demo
             AccessoryDAO dao = new AccessoryDAO();
             dao.Insert(new Accessotion(1, "Mouse"));
             dao.Insert(new Accessotion(2, "Keyboard"));
-            List<Accessotion> accessories = dao.Search("Mouse");
+            List<Accessotion> accessories = dao.Search(a=>a.Name.Equals("Mouse"));
             Console.WriteLine(accessories.Count == 1 ? "Test Search passed" : "Test Search failed");
         }
 

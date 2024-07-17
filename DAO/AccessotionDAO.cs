@@ -8,19 +8,15 @@ using System.Threading.Tasks;
 namespace OOP_Anh.doanhoangviet.DAO
 {
     internal class AccessoryDAO : BaseDAO<Accessotion>
-{
+    {
 
         /*tim kiem Accessotion theo ten
-         * @pram string name
+         * @pram Func<Product, bool> where
          * retuen List<Accessotion> */
-        public List<Accessotion> Search(string name)
-    {
-        var accessories = db.FindAll<Accessotion>();
-        if (!string.IsNullOrEmpty(name))
+        public List<Accessotion> Search(Func<Accessotion, bool> where = null)
         {
-            accessories = accessories.Where(a => a.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
+            var accessories = db.FindAll<Accessotion>();
+            return (where == null) ? accessories : accessories.Where(where).ToList();
         }
-        return accessories;
     }
-}
 }

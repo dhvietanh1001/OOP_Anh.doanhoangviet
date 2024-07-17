@@ -9,18 +9,13 @@ namespace OOP_Anh.doanhoangviet.DAO
 {
     internal class ProductDAO : BaseDAO<Product>
     {
-        public List<Product> Search(string name, int categoryId)
+        /*tim kiem  Product theo ten va categoryid
+         * @pram Func<Product, bool> where
+         * retuen List<Product> */
+        public List<Product> Search(Func<Product, bool> where = null)
         {
             var products = db.FindAll<Product>();
-            if (!string.IsNullOrEmpty(name))
-            {
-                products = products.Where(p => p.Name.Contains(name, StringComparison.OrdinalIgnoreCase)).ToList();
-            }
-            if (categoryId != -1)
-            {
-                products = products.Where(p => p.CategoryId == categoryId).ToList();
-            }
-            return products;
+            return (where == null) ? products : products.Where(where).ToList();
         }
     }
 

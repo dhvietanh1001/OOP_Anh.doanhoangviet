@@ -12,6 +12,9 @@ namespace OOP_Anh.doanhoangviet.DAO
     {
         protected Database db = Database.Instance;
 
+        /*them ban ghi vao bang
+         * @pram T row
+         * return bool */
         public virtual bool Insert(T row)
         {
             try
@@ -32,6 +35,9 @@ namespace OOP_Anh.doanhoangviet.DAO
             }
         }
 
+        /*cap nhat ban ghi vao bang
+         * @pram T row
+         * return bool */
         public virtual bool Update(T row)
         {
             try
@@ -52,6 +58,9 @@ namespace OOP_Anh.doanhoangviet.DAO
             }
         }
 
+        /*xoa ban ghi vao bang
+         * @pram T row
+         * return bool */
         public virtual bool Delete(T row)
         {
             try
@@ -72,17 +81,25 @@ namespace OOP_Anh.doanhoangviet.DAO
             }
         }
 
+        /*lay ra tat ca ban ghi
+         * List<T> */
         public virtual List<T> FindAll()
         {
             return db.FindAll<T>();
         }
 
+        /*tim kiem ban ghi theo id
+         * @pram int id
+         * retuen bool */
         public virtual T FindById(int id)
         {
             var entity = db.FindById<T>(id);
             return entity;
         }
 
+        /*tim kiem ban ghi theo name
+         * @pram string name 
+         * return bool*/
         public virtual T FindByName(string name)
         {
             var entity = db.FindAll<T>().FirstOrDefault(e => e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
