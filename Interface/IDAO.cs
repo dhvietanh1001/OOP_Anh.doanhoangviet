@@ -13,25 +13,25 @@ namespace OOP_Anh.doanhoangviet.Interface
          * @param row
          * return bool
          * */
-        bool Insert(T row);
+        bool Insert(string name,T row);
         /*cap nhat ban ghi
          * @param row
          * return bool
          * */
-        bool Update(T row);
+        bool Update(string name, T row);
         /*xoa ban ghi
          * @param row
          * return bool
          * */
-        bool Delete(T row);
+        bool Delete(string name,T row);
         /*lay ra tat ca ban ghi
          * return list<T>
          * */
-        List<T> FindAll();
+        List<T> FindAll(string name);
         /*tim ban ghi theo id
          * @param id
          * return T
          * */
-        T FindById(int id);
+        T FindById(string name,int id);
     }
 }

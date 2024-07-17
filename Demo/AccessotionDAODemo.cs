@@ -14,7 +14,7 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             AccessoryDAO dao = new AccessoryDAO();
             Accessotion accessory = new Accessotion(1, "Mouse");
-            bool result = dao.Insert(accessory);
+            bool result = dao.Insert("Product", accessory);
             Console.WriteLine(result );
         }
 
@@ -22,9 +22,9 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             AccessoryDAO dao = new AccessoryDAO();
             Accessotion accessory = new Accessotion(1, "Mouse");
-            dao.Insert(accessory);
+            dao.Insert("Product", accessory);
             accessory.Name = "Wireless Mouse";
-            bool result = dao.Update(accessory);
+            bool result = dao.Update("Product", accessory);
             Console.WriteLine(result);
         }
 
@@ -32,32 +32,32 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             AccessoryDAO dao = new AccessoryDAO();
             Accessotion accessory = new Accessotion(1, "Mouse");
-            dao.Insert(accessory);
-            bool result = dao.Update(accessory);
+            dao.Insert("Product", accessory);
+            bool result = dao.Update("Product",accessory);
             Console.WriteLine(result);
         }
 
         public static void FindAllTest()
         {
             AccessoryDAO dao = new AccessoryDAO();
-            dao.Insert(new Accessotion(1, "Mouse"));
-            dao.Insert(new Accessotion(2, "Keyboard"));
-            List<Accessotion> accessories = dao.FindAll();
+            dao.Insert("Product", new Accessotion(1, "Mouse"));
+            dao.Insert("Product", new Accessotion(2, "Keyboard"));
+            List<Accessotion> accessories = dao.FindAll("Product");
             Console.WriteLine(accessories.Count == 2 ? "Test FindAll passed" : "Test FindAll failed");
         }
 
         public static void FindByIdTest()
         {
             AccessoryDAO dao = new AccessoryDAO();
-            dao.Insert(new Accessotion(1, "Mouse"));
-            Accessotion accessory = dao.FindById(1);
+            dao.Insert("Product", new Accessotion(1, "Mouse"));
+            Accessotion accessory = dao.FindById("Product", 1);
             Console.WriteLine(accessory != null && accessory.Name == "Mouse" ? "Test FindById passed" : "Test FindById failed");
         }
 
         public static void FindByNameTest()
         {
             AccessoryDAO dao = new AccessoryDAO();
-            dao.Insert(new Accessotion(1, "Mouse"));
+            dao.Insert("Product", new Accessotion(1, "Mouse"));
             Accessotion accessory = dao.FindByName("Mouse");
             Console.WriteLine(accessory != null && accessory.Name == "Mouse" ? "Test FindByName passed" : "Test FindByName failed");
         }
@@ -65,8 +65,8 @@ namespace OOP_Anh.doanhoangviet.Demo
         public static void SearchTest()
         {
             AccessoryDAO dao = new AccessoryDAO();
-            dao.Insert(new Accessotion(1, "Mouse"));
-            dao.Insert(new Accessotion(2, "Keyboard"));
+            dao.Insert("Product", new Accessotion(1, "Mouse"));
+            dao.Insert("Product", new Accessotion(2, "Keyboard"));
             List<Accessotion> accessories = dao.Search(a=>a.Name.Equals("Mouse"));
             Console.WriteLine(accessories.Count == 1 ? "Test Search passed" : "Test Search failed");
         }

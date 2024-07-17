@@ -15,7 +15,7 @@ namespace OOP_Anh.doanhoangviet.DAO
          * retuen List<Accessotion> */
         public List<Accessotion> Search(Func<Accessotion, bool> where = null)
         {
-            var accessories = db.FindAll<Accessotion>();
+            var accessories = db.FindAll<Accessotion>("Accessotion");
             return (where == null) ? accessories : accessories.Where(where).ToList();
         }
     }

@@ -12,3 +12,4 @@ C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debu
 C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.pdb
 C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.genruntimeconfig.cache
 C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\ref\OOP_Anh.doanhoangviet.dll
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.sourcelink.json

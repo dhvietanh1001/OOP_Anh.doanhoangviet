@@ -17,13 +17,13 @@ namespace OOP_Anh.doanhoangviet.Demo
         public void InsertTableTest()
         {
             Product newProduct = new Product { Id = 11, Name = "New Product", CategoryId = 1 };
-            db.InsertTable<Product>(newProduct);
+            db.InsertTable<Product>("Product",newProduct);
             PrintTableTest();
         }
 
         public void SelectTableTest()
         {
-            var products = db.SelectTable<Product>();
+            var products = db.SelectTable<Product>("Product");
             foreach (var product in products)
             {
                 Console.WriteLine($"Product ID: {product.Id}, Name: {product.Name}, Category ID: {product.CategoryId}");
@@ -33,7 +33,7 @@ namespace OOP_Anh.doanhoangviet.Demo
         public void UpdateTableTest()
         {
             Product updatedProduct = new Product { Id = 1, Name = "Updated Product", CategoryId = 2 };
-            db.UpdateTable<Product>(updatedProduct);
+            db.UpdateTable<Product>("Product", updatedProduct);
             PrintTableTest();
         }
 
@@ -41,14 +41,14 @@ namespace OOP_Anh.doanhoangviet.Demo
         public void DeleteTableTest()
         {
             Product productToDelete = new Product { Id = 2, Name = "Product 2", CategoryId = 1 };
-            db.DeleteTable<Product>(productToDelete);
+            db.DeleteTable<Product>("Product", productToDelete);
             PrintTableTest();
         }
 
         public void TruncateTableTest()
         {
             Console.WriteLine("Truncating product table.");
-            db.TruncateTable<Product>();
+            db.TruncateTable<Product>("Product");
             PrintTableTest();
         }
 
@@ -57,14 +57,14 @@ namespace OOP_Anh.doanhoangviet.Demo
             for (int i = 1; i <= 10; i++)
             {
                 Product product = new Product { Id = i, Name = $"Product {i}", CategoryId = i % 3 + 1 };
-                db.InsertTable<Product>(product);
+                db.InsertTable<Product>("Product", product);
             }
         }
 
         public static void PrintTableTest()
         {
             Database db2 = Database.Instance;
-            db2.PrintTable<Product>();
+            db2.PrintTable<Product>("Product");
         }
 
         //public static void Main(string[] args)

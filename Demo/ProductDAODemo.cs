@@ -14,7 +14,7 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             ProductDAO dao = new ProductDAO();
             Product product = new Product(1, "Laptop", 1);
-            bool result = dao.Insert(product);
+            bool result = dao.Insert("Product", product);
             Console.WriteLine(result);
         }
 
@@ -22,9 +22,9 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             ProductDAO dao = new ProductDAO();
             Product product = new Product(1, "Laptop", 1);
-            dao.Insert(product);
+            dao.Insert("Product", product);
             product.Name = "Gaming Laptop";
-            bool result = dao.Update(product);
+            bool result = dao.Update("Product", product);
             Console.WriteLine(result);
         }
 
@@ -32,32 +32,32 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             ProductDAO dao = new ProductDAO();
             Product product = new Product(1, "Laptop", 1);
-            dao.Insert(product);
-            bool result = dao.Delete(product);
+            dao.Insert("Product", product);
+            bool result = dao.Delete("Product", product);
             Console.WriteLine(result);
         }
 
         public static void FindAllTest()
         {
             ProductDAO dao = new ProductDAO();
-            dao.Insert(new Product(1, "Laptop", 1));
-            dao.Insert(new Product(2, "Smartphone", 1));
-            List<Product> products = dao.FindAll();
+            dao.Insert("Product", new Product(1, "Laptop", 1));
+            dao.Insert("Product", new Product(2, "Smartphone", 1));
+            List<Product> products = dao.FindAll("Product");
             Console.WriteLine(products.Count == 2 ? "Test FindAll passed" : "Test FindAll failed");
         }
 
         public static void FindByIdTest()
         {
             ProductDAO dao = new ProductDAO();
-            dao.Insert(new Product(1, "Laptop", 1));
-            Product product = dao.FindById(1);
+            dao.Insert("Product",new Product(1, "Laptop", 1));
+            Product product = dao.FindById("Product",1);
             Console.WriteLine(product != null && product.Name == "Laptop" ? "FindByIdTest passed" : "FindByIdTest failed");
         }
 
         public static void FindByNameTest()
         {
             ProductDAO dao = new ProductDAO();
-            dao.Insert(new Product(1, "Laptop", 1));
+            dao.Insert("Product", new Product(1, "Laptop", 1));
             Product product = dao.FindByName("Laptop");
             Console.WriteLine(product != null && product.Name == "Laptop" ? "FindByNameTest passed" : "FindByNameTest failed");
         }
@@ -65,11 +65,11 @@ namespace OOP_Anh.doanhoangviet.Demo
         public static void SearchTest()
         {
             ProductDAO dao = new ProductDAO();
-            dao.Insert(new Product(1, "Laptop", 1));
-            dao.Insert(new Product(2, "Smartphone", 1));
-            dao.Insert(new Product(3, "Televison", 1));
-            dao.Insert(new Product(4, "fridge", 1));
-            dao.Insert(new Product(5, "air conditioning", 2));
+            dao.Insert("Product", new Product(1, "Laptop", 1));
+            dao.Insert("Product", new Product(2, "Smartphone", 1));
+            dao.Insert("Product", new Product(3, "Televison", 1));
+            dao.Insert("Product", new Product(4, "fridge", 1));
+            dao.Insert("Product", new Product(5, "air conditioning", 2));
             List<Product> products = dao.Search(p=>p.CategoryId==1);
             Console.WriteLine(products.Count == 4 ? " SearchTest passed" : " SearchTest failed");
         }

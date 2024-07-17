@@ -14,7 +14,7 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             CategoryDAO dao = new CategoryDAO();
             Category category = new Category(1, "Electronics");
-            bool result = dao.Insert(category);
+            bool result = dao.Insert("Category", category);
             Console.WriteLine(result);
         }
 
@@ -22,9 +22,9 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             CategoryDAO dao = new CategoryDAO();
             Category category = new Category(1, "Electronics");
-            dao.Insert(category);
+            dao.Insert("Category", category);
             category.Name = "Home Electronics";
-            bool result = dao.Update(category);
+            bool result = dao.Update("Category",category);
             Console.WriteLine(result);
         }
 
@@ -32,17 +32,17 @@ namespace OOP_Anh.doanhoangviet.Demo
         {
             CategoryDAO dao = new CategoryDAO();
             Category category = new Category(1, "Electronics");
-            dao.Insert(category);
-            bool result = dao.Delete(category);
+            dao.Insert("Category", category);
+            bool result = dao.Delete("Category", category);
             Console.WriteLine(result);
         }
 
         public static void FindAllTest()
         {
             CategoryDAO dao = new CategoryDAO();
-            dao.Insert(new Category(1, "Electronics"));
-            dao.Insert(new Category(2, "Books"));
-            List<Category> categories = dao.FindAll();
+            dao.Insert("Category", new Category(1, "Electronics"));
+            dao.Insert("Category", new Category(2, "Books"));
+            List<Category> categories = dao.FindAll("Category");
             foreach (var item in categories)
             {
                 Console.WriteLine(item.ToString());
@@ -52,8 +52,8 @@ namespace OOP_Anh.doanhoangviet.Demo
         public static void FindByIdTest()
         {
             CategoryDAO dao = new CategoryDAO();
-            dao.Insert(new Category(1, "Electronics"));
-            Category category = dao.FindById(1);
+            dao.Insert("Category", new Category(1, "Electronics"));
+            Category category = dao.FindById("Category", 1);
             Console.WriteLine(category.ToString());
         }
 

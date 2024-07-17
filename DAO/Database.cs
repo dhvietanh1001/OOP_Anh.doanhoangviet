@@ -36,26 +36,26 @@ namespace OOP_Anh.doanhoangviet.DAO
         }
 
         /*them ban ghi vao bang
-         * @param T row
+         * @param string name, T row
          * return void*/
-        public void InsertTable<T>(T row) where T : BaseRow
+        public void InsertTable<T>(string name,T row) where T : BaseRow
         {
-            GetListByType<T>().Add(row);
+            GetListByType<T>(name).Add(row);
         }
 
         /*lay ban ghi tu trong bang theo dieu kien
-         * @param Func<T, bool> where = null
+         * @param string name, Func<T, bool> where = null
          * return list<T>*/
-        public List<T> SelectTable<T>(Func<T, bool> where = null) where T : BaseRow
+        public List<T> SelectTable<T>(string name, Func<T, bool> where = null) where T : BaseRow
         {
-            var list = GetListByType<T>();
+            var list = GetListByType<T>(name);
             return (where == null) ? list : list.Where(where).ToList();
         }
 
         /*cap nhat ban ghi vao bang
-         * @param T row
+         * @param sreing name, T row
          * return void*/
-        public void UpdateTable<T>(T row) where T : BaseRow
+        public void UpdateTable<T>(string name, T row) where T : BaseRow
         {
             if (row is Product)
             {
@@ -72,9 +72,9 @@ namespace OOP_Anh.doanhoangviet.DAO
         }
 
         /*xoa ban ghi vao bang
-         * @param T row
+         * @param sreing name, T row
          * return void*/
-        public void DeleteTable<T>(T row) where T : BaseRow
+        public void DeleteTable<T>(string name, T row) where T : BaseRow
         {
             if(row is Product)
             {
@@ -93,21 +93,21 @@ namespace OOP_Anh.doanhoangviet.DAO
 
         /*xoa du lieu tat ca cac bang 
          * return void*/
-        public void TruncateTable<T>() where T : BaseRow
+        public void TruncateTable<T>(string name) where T : BaseRow
         {
-            GetListByType<T>().Clear();
+            GetListByType<T>(name).Clear();
         }
 
         /*lay ra toan bo ban ghi cua 1 bang
          * return List<T>*/
-        public List<T> FindAll<T>() where T : BaseRow
+        public List<T> FindAll<T>(string name) where T : BaseRow
         {
-            return GetListByType<T>();
+            return GetListByType<T>(name);
         }
 
         /*lay ra danh sach cuar 1 bang
          * return List<T>*/
-        private List<T> GetListByType<T>() where T : BaseRow
+        private List<T> GetListByType<T>(string name) where T : BaseRow
         {
             if (typeof(T) == typeof(Product))
             {
@@ -126,9 +126,9 @@ namespace OOP_Anh.doanhoangviet.DAO
 
         /*in ra bang
          * return void*/
-        public void PrintTable<T>() where T : BaseRow
+        public void PrintTable<T>(string name) where T : BaseRow
         {
-            var list = GetListByType<T>();
+            var list = GetListByType<T>(name);
             Console.WriteLine("Count:"+list.Count);
             foreach (var item in list)
             {
@@ -163,9 +163,9 @@ namespace OOP_Anh.doanhoangviet.DAO
         /*tim kiem ban ghi trong danh sach bang id
          * @param int id
          * return void*/
-        public T FindById<T>(int id) where T:BaseRow
+        public T FindById<T>(string name,int id) where T:BaseRow
         {
-             var objectFind = GetListByType<T>().SingleOrDefault(t=>t.Id==id);
+             var objectFind = GetListByType<T>(name).SingleOrDefault(t=>t.Id==id);
             if (objectFind == null)
             {
                 return null;

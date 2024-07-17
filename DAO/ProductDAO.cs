@@ -14,7 +14,7 @@ namespace OOP_Anh.doanhoangviet.DAO
          * retuen List<Product> */
         public List<Product> Search(Func<Product, bool> where = null)
         {
-            var products = db.FindAll<Product>();
+            var products = db.FindAll<Product>("Product");
             return (where == null) ? products : products.Where(where).ToList();
         }
     }

@@ -15,16 +15,16 @@ namespace OOP_Anh.doanhoangviet.DAO
         /*them ban ghi vao bang
          * @pram T row
          * return bool */
-        public virtual bool Insert(T row)
+        public virtual bool Insert(string name,T row)
         {
             try
             {
-                if (FindById(row.Id) != null)
+                if (FindById(name,row.Id) != null)
                 {
                     Console.WriteLine($"{typeof(T).Name} with Id {row.Id} already exists");
                     return false;
                 }
-                db.InsertTable(row);
+                db.InsertTable(name,row);
                 Console.WriteLine($"Insert {typeof(T).Name.ToLower()} successfully");
                 return true;
             }
@@ -38,16 +38,16 @@ namespace OOP_Anh.doanhoangviet.DAO
         /*cap nhat ban ghi vao bang
          * @pram T row
          * return bool */
-        public virtual bool Update(T row)
+        public virtual bool Update(string name,T row)
         {
             try
             {
-                if (FindById(row.Id) == null)
+                if (FindById(name, row.Id) == null)
                 {
                     Console.WriteLine($"{typeof(T).Name} with Id {row.Id} does not exist");
                     return false;
                 }
-                db.UpdateTable(row);
+                db.UpdateTable(name, row);
                 Console.WriteLine($"Update {typeof(T).Name.ToLower()} successfully");
                 return true;
             }
@@ -61,16 +61,16 @@ namespace OOP_Anh.doanhoangviet.DAO
         /*xoa ban ghi vao bang
          * @pram T row
          * return bool */
-        public virtual bool Delete(T row)
+        public virtual bool Delete(string name,T row)
         {
             try
             {
-                if (FindById(row.Id) == null)
+                if (FindById(name,row.Id) == null)
                 {
                     Console.WriteLine($"{typeof(T).Name} with Id {row.Id} does not exist");
                     return false;
                 }
-                db.DeleteTable(row);
+                db.DeleteTable(name, row);
                 Console.WriteLine($"Delete {typeof(T).Name.ToLower()} successfully");
                 return true;
             }
@@ -83,17 +83,17 @@ namespace OOP_Anh.doanhoangviet.DAO
 
         /*lay ra tat ca ban ghi
          * List<T> */
-        public virtual List<T> FindAll()
+        public virtual List<T> FindAll(string name)
         {
-            return db.FindAll<T>();
+            return db.FindAll<T>(name);
         }
 
         /*tim kiem ban ghi theo id
          * @pram int id
          * retuen bool */
-        public virtual T FindById(int id)
+        public virtual T FindById(string name,int id)
         {
-            var entity = db.FindById<T>(id);
+            var entity = db.FindById<T>(name,id);
             return entity;
         }
 
@@ -102,7 +102,7 @@ namespace OOP_Anh.doanhoangviet.DAO
          * return bool*/
         public virtual T FindByName(string name)
         {
-            var entity = db.FindAll<T>().FirstOrDefault(e => e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
+            var entity = db.FindAll<T>(name).FirstOrDefault(e => e.Name.Equals(name, StringComparison.OrdinalIgnoreCase));
             if (entity == null)
             {
                 Console.WriteLine($"{typeof(T).Name} with name {name} not found");
