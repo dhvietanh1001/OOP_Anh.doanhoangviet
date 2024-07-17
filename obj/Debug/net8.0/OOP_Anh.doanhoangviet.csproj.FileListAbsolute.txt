@@ -1,0 +1,14 @@
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\bin\Debug\net8.0\OOP_Anh.doanhoangviet.exe
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\bin\Debug\net8.0\OOP_Anh.doanhoangviet.deps.json
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\bin\Debug\net8.0\OOP_Anh.doanhoangviet.runtimeconfig.json
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\bin\Debug\net8.0\OOP_Anh.doanhoangviet.dll
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\bin\Debug\net8.0\OOP_Anh.doanhoangviet.pdb
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.AssemblyInfoInputs.cache
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.AssemblyInfo.cs
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.csproj.CoreCompileInputs.cache
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.dll
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\refint\OOP_Anh.doanhoangviet.dll
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.pdb
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\OOP_Anh.doanhoangviet.genruntimeconfig.cache
+C:\Users\vieta\source\repos\OOP_Anh.doanhoangviet\OOP_Anh.doanhoangviet\obj\Debug\net8.0\ref\OOP_Anh.doanhoangviet.dll
